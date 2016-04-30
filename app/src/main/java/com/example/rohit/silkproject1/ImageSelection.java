@@ -13,6 +13,7 @@ public class ImageSelection extends ActionBarActivity implements  View.OnClickLi
     ImageView imageToUpload;
     Button imageSelectionButton;
     Button invertImageButton;
+    Button backToMainPageBtn;
     public static final int RESULT_IMAGE_LOAD = 1;
     Uri imageUri;
 
@@ -25,8 +26,10 @@ public class ImageSelection extends ActionBarActivity implements  View.OnClickLi
 
         imageSelectionButton = (Button)findViewById(R.id.imageSelectionButton);
         invertImageButton = (Button)findViewById(R.id.invertImageButton);
+        backToMainPageBtn = (Button)findViewById(R.id.backToMainPageBtn);
 
         imageSelectionButton.setOnClickListener(this);
+        backToMainPageBtn.setOnClickListener(this);
         imageToUpload.setOnClickListener(this);
         invertImageButton.setOnClickListener(this);
     }
@@ -50,6 +53,12 @@ public class ImageSelection extends ActionBarActivity implements  View.OnClickLi
                         "Please Select an Image !! ",
                         Toast.LENGTH_SHORT).show();
             }
+        }
+
+        if(R.id.backToMainPageBtn == v.getId()){
+            Intent startAnotherActivity;
+            startAnotherActivity = new Intent(ImageSelection.this, StartupPage.class);
+            startActivity(startAnotherActivity);
         }
     }
 

@@ -1,5 +1,6 @@
 package com.example.rohit.silkproject1;
 
+import android.content.ClipData;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ public class CombineImages extends ActionBarActivity   implements  View.OnClickL
     Button combineImagesButton;
     Uri imageUri;
     public static final int RESULT_IMAGE_LOAD = 1;
+    ClipData imageClipData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +32,7 @@ public class CombineImages extends ActionBarActivity   implements  View.OnClickL
     public void onClick(View v){
         if(R.id.multipleImageSelectionBtn == v.getId()){
             Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-            intent.setType("*/*");
+            intent.setType("image/*");
             intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
             intent.addCategory(Intent.CATEGORY_OPENABLE);
             startActivityForResult(Intent.createChooser(intent, "Select Picture"), RESULT_IMAGE_LOAD);
@@ -52,7 +54,16 @@ public class CombineImages extends ActionBarActivity   implements  View.OnClickL
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
         if(requestCode==RESULT_IMAGE_LOAD && resultCode==RESULT_OK && data!=null){
-            imageUri= data.getData();
+
+            imageClipData=   data.getClipData();
+           for(int i=0;i<imageClipData.getItemCount();i++){
+               ClipData.Item items=imageClipData.getItemAt(i);
+               String vak = items.getUri().toString();
+               imageUri = items.getUri();
+           }
+
+            //imageUri=   data.getClipData();
+
             // imageToUpload.setImageURI(imageUri);
         }else{
             Toast.makeText(getApplicationContext(),
