@@ -1,0 +1,31 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.rohit.silkproject1.CombineImages">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Images from Gallery"
+        android:id="@+id/multipleImageSelectionBtn"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#49d8fb77"
+        android:background="#ff1f0f19" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="COMBINE IMAGES"
+        android:id="@+id/combineImagesBtn"
+        android:layout_below="@+id/multipleImageSelectionBtn"
+        android:layout_marginTop="70dp"
+        android:layout_alignEnd="@+id/multipleImageSelectionBtn"
+        android:layout_alignStart="@+id/multipleImageSelectionBtn"
+        android:textColor="#49d8fb77"
+        android:background="#ff1f0f19" />
+
+</RelativeLayout>

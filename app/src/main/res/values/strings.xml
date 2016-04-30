@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SilkProject1</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_image_selection">ImageSelection</string>
+    <string name="title_activity_invert_image_view">InvertImageView</string>
+    <string name="title_activity_combine_images">CombineImages</string>
+</resources>
