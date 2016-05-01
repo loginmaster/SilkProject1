@@ -8,25 +8,31 @@
     android:background="@drawable/back">
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/abc_search_view_text_min_width"
         android:layout_height="wrap_content"
-        android:text="Select Images from Gallery"
+        android:text="Select Images"
         android:id="@+id/multipleImageSelectionBtn"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
         android:textColor="#49d8fb77"
-        android:background="#ff1f0f19" />
+        android:background="#ff1f0f19"
+        android:layout_alignTop="@+id/combineImagesBtn"
+        android:layout_alignParentStart="true" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/abc_search_view_text_min_width"
         android:layout_height="wrap_content"
         android:text="COMBINE IMAGES"
         android:id="@+id/combineImagesBtn"
-        android:layout_below="@+id/multipleImageSelectionBtn"
-        android:layout_marginTop="70dp"
-        android:layout_alignEnd="@+id/multipleImageSelectionBtn"
-        android:layout_alignStart="@+id/multipleImageSelectionBtn"
         android:textColor="#49d8fb77"
-        android:background="#ff1f0f19" />
+        android:background="#ff1f0f19"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listImageView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/multipleImageSelectionBtn" />
 
 </RelativeLayout>
