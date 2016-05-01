@@ -21,6 +21,8 @@ public class CombineImages extends ActionBarActivity   implements  View.OnClickL
     public static final int RESULT_IMAGE_LOAD = 1;
     ClipData imageClipData;
     ListView listImageView;
+    List<String> imageUrlList = new ArrayList<String>();
+    String imageUris = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,38 +47,36 @@ public class CombineImages extends ActionBarActivity   implements  View.OnClickL
         }
 
 
+
         if(R.id.combineImagesBtn == v.getId()){
-            Toast.makeText(getApplicationContext(),
-                    "Development in Progress !! Thank You for your patient...:)",
-                    Toast.LENGTH_SHORT).show();
-        }
-        /*if(R.id.combineImagesBtn == v.getId()){
-            if(imageUri != null){
-                Intent startAnotherActivity = new Intent(CombineImages.this, InvertImageView.class);
-                startAnotherActivity.putExtra("image-uri", imageUri.toString());
+            if(imageUris != null && !imageUris.isEmpty()){
+                Intent startAnotherActivity = new Intent(CombineImages.this, CombineImagesResult.class);
+                startAnotherActivity.putExtra("image-uri", imageUris);
                 startActivity(startAnotherActivity);
             }else{
                 Toast.makeText(getApplicationContext(),
                         "Please Select an Image !! ",
                         Toast.LENGTH_SHORT).show();
             }
-        }*/
+        }
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
         if(requestCode==RESULT_IMAGE_LOAD && resultCode==RESULT_OK && data!=null && data.getClipData()!=null){
-            List<String> imageUrlList = new ArrayList<String>();
+
             Boolean bmpNotSelected = false;
             imageClipData = data.getClipData();
-           for(int i=0;i<imageClipData.getItemCount();i++){
+            for(int i=0;i<imageClipData.getItemCount();i++){
                ClipData.Item items=imageClipData.getItemAt(i);
                if(!items.getUri().toString().contains(".BMP")){
                    bmpNotSelected = true;
                    break;
                }
-               imageUrlList.add(items.getUri().toString());
-           }
+                imageUrlList.add(items.getUri().toString());
+                imageUris = imageUris +items.getUri().toString()+";";
+                //imageUrlList.add(items.getUri().toString());
+            }
             if(!bmpNotSelected) {
                 CustomList adapter = new CustomList(CombineImages.this, imageUrlList);
                 listImageView.setAdapter(adapter);

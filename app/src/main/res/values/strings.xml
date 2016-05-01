@@ -6,4 +6,5 @@
     <string name="title_activity_image_selection">ImageSelection</string>
     <string name="title_activity_invert_image_view">InvertImageView</string>
     <string name="title_activity_combine_images">CombineImages</string>
+    <string name="title_activity_combine_images_result">CombineImagesResult</string>
 </resources>

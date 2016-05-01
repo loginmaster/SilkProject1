@@ -41,10 +41,10 @@ public class InvertImageView extends ActionBarActivity implements ImageView.OnCl
         saveImageButton= (Button)findViewById(R.id.saveImage);
         cancelButton= (Button)findViewById(R.id.backToImageSelection);
         submitImageNameBtn= (Button)findViewById(R.id.submitImageNameBtn);
-        cancelImageNameBtn= (Button)findViewById(R.id.cancelImageNameBtn);
+        cancelImageNameBtn= (Button)findViewById(R.id.canceCombinelImageNameBtn);
         topLevelLayout = findViewById(R.id.top_layout);
 
-        getImageName =(EditText) findViewById(R.id.getImageName);
+        getImageName =(EditText) findViewById(R.id.getImageNameCombine);
 
         saveImageButton.setOnClickListener(this);
         cancelButton.setOnClickListener(this);
@@ -78,7 +78,7 @@ public class InvertImageView extends ActionBarActivity implements ImageView.OnCl
             topLevelLayout.setVisibility(View.VISIBLE);
         }
 
-        if (v.getId() == R.id.cancelImageNameBtn) {
+        if (v.getId() == R.id.canceCombinelImageNameBtn) {
             clearPage();
         }
 
@@ -92,7 +92,7 @@ public class InvertImageView extends ActionBarActivity implements ImageView.OnCl
                 sdIconStorageDir.mkdirs();
 
                 try {
-                    String filePath = sdIconStorageDir.toString() + "/" + imageName + ".bmp";
+                    String filePath = sdIconStorageDir.toString() + "/" + imageName + ".BMP";
                     FileOutputStream fileOutputStream = new FileOutputStream(filePath);
 
                     BufferedOutputStream bos = new BufferedOutputStream(fileOutputStream);
