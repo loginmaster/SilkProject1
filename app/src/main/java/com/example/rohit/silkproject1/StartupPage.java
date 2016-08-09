@@ -10,6 +10,7 @@ import android.widget.Button;
 public class StartupPage  extends ActionBarActivity implements  View.OnClickListener{
     Button removeWhiteLinePage;
     Button combineImagePage;
+    Button createJaquardImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,9 +19,11 @@ public class StartupPage  extends ActionBarActivity implements  View.OnClickList
 
         removeWhiteLinePage = (Button)findViewById(R.id.removeWhiteLinePage);
         combineImagePage = (Button)findViewById(R.id.combineImagePage);
+        createJaquardImage = (Button)findViewById(R.id.createJaquardImage);
 
         removeWhiteLinePage.setOnClickListener(this);
         combineImagePage.setOnClickListener(this);
+        createJaquardImage.setOnClickListener(this);
     }
 
     @Override
@@ -30,6 +33,9 @@ public class StartupPage  extends ActionBarActivity implements  View.OnClickList
             startActivity(startAnotherActivity);
         }else if(R.id.combineImagePage == v.getId()) {
             Intent startAnotherActivity = new Intent(StartupPage.this, CombineImages.class);
+            startActivity(startAnotherActivity);
+        }else if(R.id.createJaquardImage == v.getId()){
+            Intent startAnotherActivity = new Intent(StartupPage.this, CreateJaquardImage.class);
             startActivity(startAnotherActivity);
         }
 

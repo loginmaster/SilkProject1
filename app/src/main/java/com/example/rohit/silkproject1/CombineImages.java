@@ -40,7 +40,7 @@ public class CombineImages extends ActionBarActivity   implements  View.OnClickL
     public void onClick(View v){
         if(R.id.multipleImageSelectionBtn == v.getId()){
             Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-            intent.setType("image/*");
+            intent.setType("*/*");
             intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
             intent.addCategory(Intent.CATEGORY_OPENABLE);
             startActivityForResult(Intent.createChooser(intent, "Select Picture"), RESULT_IMAGE_LOAD);
@@ -69,10 +69,10 @@ public class CombineImages extends ActionBarActivity   implements  View.OnClickL
             imageClipData = data.getClipData();
             for(int i=0;i<imageClipData.getItemCount();i++){
                ClipData.Item items=imageClipData.getItemAt(i);
-               if(!items.getUri().toString().contains(".BMP")){
+               /*if(!items.getUri().toString().contains(".BMP")){
                    bmpNotSelected = true;
                    break;
-               }
+               }*/
                 imageUrlList.add(items.getUri().toString());
                 imageUris = imageUris +items.getUri().toString()+";";
                 //imageUrlList.add(items.getUri().toString());

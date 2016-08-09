@@ -41,10 +41,10 @@ public class InvertImageView extends ActionBarActivity implements ImageView.OnCl
         saveImageButton= (Button)findViewById(R.id.saveImage);
         cancelButton= (Button)findViewById(R.id.backToImageSelection);
         submitImageNameBtn= (Button)findViewById(R.id.submitImageNameBtn);
-        cancelImageNameBtn= (Button)findViewById(R.id.canceCombinelImageNameBtn);
+        cancelImageNameBtn= (Button)findViewById(R.id.cancelConvertedImageNameBtn);
         topLevelLayout = findViewById(R.id.top_layout);
 
-        getImageName =(EditText) findViewById(R.id.getImageNameCombine);
+        getImageName =(EditText) findViewById(R.id.selectBMPImage);
 
         saveImageButton.setOnClickListener(this);
         cancelButton.setOnClickListener(this);
@@ -78,7 +78,7 @@ public class InvertImageView extends ActionBarActivity implements ImageView.OnCl
             topLevelLayout.setVisibility(View.VISIBLE);
         }
 
-        if (v.getId() == R.id.canceCombinelImageNameBtn) {
+        if (v.getId() == R.id.cancelConvertedImageNameBtn) {
             clearPage();
         }
 

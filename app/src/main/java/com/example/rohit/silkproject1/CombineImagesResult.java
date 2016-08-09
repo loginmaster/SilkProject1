@@ -39,12 +39,12 @@ public class CombineImagesResult extends ActionBarActivity implements ImageView.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_combine_images_result);
 
-        saveImageButton= (Button)findViewById(R.id.saveCobinedImageImageBtn);
-        cancelButton= (Button)findViewById(R.id.cancelCombinedimageBtn);
-        submitCombineImageNameBtn = (Button)findViewById(R.id.submitCombineImageNameBtn);
-        cancelCombineImageNameBtn = (Button)findViewById(R.id.canceCombinelImageNameBtn);
+        saveImageButton= (Button)findViewById(R.id.saveConvertedImageImageBtn);
+        cancelButton= (Button)findViewById(R.id.cancelConvertedImageBtn);
+        submitCombineImageNameBtn = (Button)findViewById(R.id.submitConvertedImageNameBtn);
+        cancelCombineImageNameBtn = (Button)findViewById(R.id.cancelConvertedImageNameBtn);
         topLevelLayoutCombine = findViewById(R.id.top_layout_combine);
-        getImageNameCombine = (EditText)findViewById(R.id.getImageNameCombine);
+        getImageNameCombine = (EditText)findViewById(R.id.selectBMPImage);
 
         saveImageButton.setOnClickListener(this);
         cancelButton.setOnClickListener(this);
@@ -83,18 +83,18 @@ public class CombineImagesResult extends ActionBarActivity implements ImageView.
     @Override
     public void onClick(View v) {
 
-        if (v.getId() == R.id.saveCobinedImageImageBtn) {
+        if (v.getId() == R.id.saveConvertedImageImageBtn) {
             getImageNameCombine.setVisibility(View.VISIBLE);
             submitCombineImageNameBtn.setVisibility(View.VISIBLE);
             cancelCombineImageNameBtn.setVisibility(View.VISIBLE);
             topLevelLayoutCombine.setVisibility(View.VISIBLE);
         }
 
-        if (v.getId() == R.id.canceCombinelImageNameBtn) {
+        if (v.getId() == R.id.cancelConvertedImageNameBtn) {
             clearPage();
         }
 
-        if (v.getId() == R.id.submitCombineImageNameBtn) {
+        if (v.getId() == R.id.submitConvertedImageNameBtn) {
             if (!getImageNameCombine.getText().toString().matches("")) {
                 String imageName = getImageNameCombine.getText().toString();
                 String iconsStoragePath = Environment.getExternalStorageDirectory() + "/myAppDir/myCombinedImages/";
@@ -135,7 +135,7 @@ public class CombineImagesResult extends ActionBarActivity implements ImageView.
             }
         }
 
-        if(v.getId()==R.id.cancelCombinedimageBtn){
+        if(v.getId()==R.id.cancelConvertedImageBtn){
             Intent startAnotherActivity = new Intent(CombineImagesResult.this, CombineImages.class);
             startActivity(startAnotherActivity);
         }

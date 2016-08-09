@@ -36,6 +36,10 @@
             android:name=".CombineImagesResult"
             android:label="@string/title_activity_combine_images_result" >
         </activity>
+        <activity
+            android:name=".CreateJaquardImage"
+            android:label="CreateJaquardImage" >
+        </activity>
     </application>
 
 </manifest>
